@@ -39,3 +39,19 @@ test("Calculator, subtract: can subtract negative numbers", () => {
 test("Calculator, subtract: can subtract with 0", () => {
     expect(calculator.subtract(52, 0)).toBe(52);
 })
+
+test("Calculator, divide: can divide with positive numbers", () => {
+    expect(calculator.divide(1,2)).toBeCloseTo(0.5);
+})
+
+test("Calculator, divide: can divide with negative numbers", () => {
+    expect(calculator.divide(-10, 2)).toBe(-5);
+})
+
+test("Calculator, divide: returns error string when dividing by 0", () => {
+    expect(calculator.divide(15, 0)).toBe("Can't divide by 0");
+})
+
+test("Calculator, divide: can divide 0 by something", () => {
+    expect(calculator.divide(0, 15)).toBe(0);
+})
