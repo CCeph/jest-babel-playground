@@ -27,3 +27,15 @@ test("Calculator, add: can add negative numbers", () => {
 test("Calculator, add: can add with 0", () => {
     expect(calculator.add(56, 0)).toBe(56);
 })
+
+test("Calculator, substract: can subtract positive numbers", () => {
+    expect(calculator.substract(1,2)).toBe(-1);
+})
+
+test("Calculator, subtract: can subtract negative numbers", () => {
+    expect(calculator.subtract(-3, 5)).toBe(-8);
+})
+
+test("Calculator, subtract: can subtract with 0", () => {
+    expect(calculator.subtract(52, 0)).toBe(52);
+})
