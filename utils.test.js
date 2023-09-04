@@ -15,3 +15,15 @@ test('reverseString: String with numbers is reversed', () => {
 test('reverseString: String with letters and numbers is reversed', () => {
     expect(reverseString('ell0529World')).toBe('dlroW9250lle');
 })
+
+test('Calculator, add: can add positive numbers', () => {
+    expect(calculator.add(1, 2)).toBe(3);
+})
+
+test("Calculator, add: can add negative numbers", () => {
+    expect(calculator.add(-3, 5)).toBe(2);
+})
+
+test("Calculator, add: can add with 0", () => {
+    expect(calculator.add(56, 0)).toBe(56);
+})
