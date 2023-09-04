@@ -55,3 +55,15 @@ test("Calculator, divide: returns error string when dividing by 0", () => {
 test("Calculator, divide: can divide 0 by something", () => {
     expect(calculator.divide(0, 15)).toBe(0);
 })
+
+test("Calculator, multiply: can multiply positive numbers", () => {
+    expect(calculator.multiply(6, 2)).toBe(12);
+})
+
+test("Calculator, multiply: can multiply negative numbers", () => {
+    expect(calculator.multiply(-6, 2)).toBe(-12);
+})
+
+test("Calculator, multiply: can multiply by 0", () => {
+    expect(calculator.multiply(5, 0)).toBe(0);
+})
