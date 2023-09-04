@@ -1,4 +1,4 @@
-import { capitalize, reverseString } from "./utils.js";
+import { capitalize, reverseString, calculator } from "./utils.js";
 
 test('First letter is capital from capitalize', () => {
     expect(capitalize('test')[0]).toMatch(/[A-Z]/);
