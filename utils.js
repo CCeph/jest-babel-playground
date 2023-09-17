@@ -52,7 +52,11 @@ export function caesarCipher(plainString, shiftFactor){
     let plainStringArray = plainString.split("");
     let encryptedString = "";
     plainStringArray.forEach(letter => {
-        encryptedString += shiftLetter(letter, shiftFactor);
+        if (!(/[A-Z]/.test(letter) || /[a-z]/.test(letter))) {
+            encryptedString += letter;
+        } else {
+            encryptedString += shiftLetter(letter, shiftFactor);
+        }
     });
     return encryptedString;
 }
