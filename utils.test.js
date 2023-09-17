@@ -87,3 +87,7 @@ test("caesarCipher can also handle upper case letters", () => {
 test("caesarCipher can also wrap with upper case letters", () => {
     expect(caesarCipher("Z", 5)).toBe("E");
 })
+
+test("caesarCipher can handle multiple letters with mixed cases", () => {
+    expect(caesarCipher("aGQrT", 1)).toBe("bHRsU");
+})

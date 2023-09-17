@@ -42,7 +42,6 @@ function shiftLetter(letter, shiftFactor) {
         shiftedAlphabetNumber -= 26;
     };
     const shiftedAlphabet = String.fromCharCode(shiftedAlphabetNumber + asciiCodeStart);
-    console.log(shiftedAlphabet.charCodeAt(0));
     return shiftedAlphabet;
 }
 
@@ -50,9 +49,10 @@ export function caesarCipher(plainString, shiftFactor){
     while (shiftFactor > 25) {
         shiftFactor -= 25;
     }
-    const encryptedString = shiftLetter(plainString, shiftFactor);
+    let plainStringArray = plainString.split("");
+    let encryptedString = "";
+    plainStringArray.forEach(letter => {
+        encryptedString += shiftLetter(letter, shiftFactor);
+    });
     return encryptedString;
 }
-
-console.log(caesarCipher("Z", 1));
-console.log("Z".charCodeAt(0))
