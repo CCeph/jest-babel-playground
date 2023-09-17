@@ -79,3 +79,11 @@ test("caesarCipher can wrap the alphabet from z to a", () => {
 test("caesarCipher can handle shift factors above 25", () => {
     expect(caesarCipher("a", 26)).toBe("b");
 })
+
+test("caesarCipher can also handle upper case letters", () => {
+    expect(caesarCipher("A", 1)).toBe("B");
+})
+
+test("caesarCipher can also wrap with upper case letters", () => {
+    expect(caesarCipher("Z", 5)).toBe("E");
+})

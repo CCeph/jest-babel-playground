@@ -30,12 +30,19 @@ export const calculator = {
 
 function shiftLetter(letter, shiftFactor) {
     const characterCode = letter.charCodeAt(0);
-    const alphabetNumber = characterCode - 96;
+    let asciiCodeStart;
+    if (/[A-Z]/.test(letter)) {
+        asciiCodeStart = 64;
+    } else {
+        asciiCodeStart = 96;
+    }
+    const alphabetNumber = characterCode - asciiCodeStart;
     let shiftedAlphabetNumber = alphabetNumber + shiftFactor;
     if (shiftedAlphabetNumber > 26) {
         shiftedAlphabetNumber -= 26;
     };
-    const shiftedAlphabet = String.fromCharCode(shiftedAlphabetNumber + 96);
+    const shiftedAlphabet = String.fromCharCode(shiftedAlphabetNumber + asciiCodeStart);
+    console.log(shiftedAlphabet.charCodeAt(0));
     return shiftedAlphabet;
 }
 
@@ -47,5 +54,5 @@ export function caesarCipher(plainString, shiftFactor){
     return encryptedString;
 }
 
-console.log(caesarCipher("a", 26));
+console.log(caesarCipher("Z", 1));
 console.log("Z".charCodeAt(0))
