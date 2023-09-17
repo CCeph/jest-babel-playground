@@ -71,3 +71,11 @@ test("Calculator, multiply: can multiply by 0", () => {
 test("caesarCipher can shift one letter by a shift factor", () => {
     expect(caesarCipher("a", 1)).toBe("b");
 })
+
+test("caesarCipher can wrap the alphabet from z to a", () => {
+    expect(caesarCipher("z", 1)).toBe("a");
+})
+
+test("caesarCipher can handle shift factors above 25", () => {
+    expect(caesarCipher("a", 26)).toBe("b");
+})

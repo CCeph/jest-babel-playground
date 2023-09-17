@@ -29,9 +29,17 @@ export const calculator = {
 }
 
 export function caesarCipher(plainString, shiftFactor){
+    while (shiftFactor > 25) {
+        shiftFactor -= 25;
+    }
     const characterCode = plainString.charCodeAt(0);
-    const encryptedString = String.fromCharCode(characterCode + shiftFactor);
+    let encrpytedCode = characterCode + shiftFactor;
+    if (encrpytedCode > 122) {
+        encrpytedCode = encrpytedCode - 122 + 96;
+    }
+    const encryptedString = String.fromCharCode(encrpytedCode);
     return encryptedString;
 }
 
-console.log(caesarCipher("a", 1));
+console.log(caesarCipher("a", 26));
+console.log("Z".charCodeAt(0))
