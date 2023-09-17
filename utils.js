@@ -28,16 +28,22 @@ export const calculator = {
     }
 }
 
+function shiftLetter(letter, shiftFactor) {
+    const characterCode = letter.charCodeAt(0);
+    const alphabetNumber = characterCode - 96;
+    let shiftedAlphabetNumber = alphabetNumber + shiftFactor;
+    if (shiftedAlphabetNumber > 26) {
+        shiftedAlphabetNumber -= 26;
+    };
+    const shiftedAlphabet = String.fromCharCode(shiftedAlphabetNumber + 96);
+    return shiftedAlphabet;
+}
+
 export function caesarCipher(plainString, shiftFactor){
     while (shiftFactor > 25) {
         shiftFactor -= 25;
     }
-    const characterCode = plainString.charCodeAt(0);
-    let encrpytedCode = characterCode + shiftFactor;
-    if (encrpytedCode > 122) {
-        encrpytedCode = encrpytedCode - 122 + 96;
-    }
-    const encryptedString = String.fromCharCode(encrpytedCode);
+    const encryptedString = shiftLetter(plainString, shiftFactor);
     return encryptedString;
 }
 
