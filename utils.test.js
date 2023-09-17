@@ -68,7 +68,7 @@ test("Calculator, multiply: can multiply by 0", () => {
     expect(calculator.multiply(5, 0)).toBe(0);
 })
 
-test("caesarCipher can shift one letter by a shift factor", () => {
+test("caesarCipher can shift one lower case letter by a shift factor", () => {
     expect(caesarCipher("a", 1)).toBe("b");
 })
 
