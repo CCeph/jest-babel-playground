@@ -27,3 +27,11 @@ export const calculator = {
         return num1 * num2;
     }
 }
+
+export function caesarCipher(plainString, shiftFactor){
+    const characterCode = plainString.charCodeAt(0);
+    const encryptedString = String.fromCharCode(characterCode + shiftFactor);
+    return encryptedString;
+}
+
+console.log(caesarCipher("a", 1));

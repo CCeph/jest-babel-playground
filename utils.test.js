@@ -1,4 +1,4 @@
-import { capitalize, reverseString, calculator } from "./utils.js";
+import { capitalize, reverseString, calculator, caesarCipher } from "./utils.js";
 
 test('First letter is capital from capitalize', () => {
     expect(capitalize('test')[0]).toMatch(/[A-Z]/);
@@ -66,4 +66,8 @@ test("Calculator, multiply: can multiply negative numbers", () => {
 
 test("Calculator, multiply: can multiply by 0", () => {
     expect(calculator.multiply(5, 0)).toBe(0);
+})
+
+test("caesarCipher can shift one letter by a shift factor", () => {
+    expect(caesarCipher("a", 1)).toBe("b");
 })
